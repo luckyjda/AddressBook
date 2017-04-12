@@ -7,20 +7,20 @@ import domain.Student;
 interface StudentService {
 	
 	/**
-	 * ²éÑ¯ËùÓĞÑ§Éú
+	 * æŸ¥è¯¢æ‰€æœ‰å­¦ç”Ÿ
 	 * @return
 	 */
 	public List<Student> queryAllStudent();
 	
 	/**
-	 * ²éÑ¯Ñ§Éú
-	 * @param id  Ñ§Éúid
+	 * æŸ¥è¯¢å­¦ç”Ÿ
+	 * @param id  å­¦ç”Ÿid
 	 * @return
 	 */
 	public Student query(String id);
 	
 	/**
-	 * Í¨¹ıÃû×Ö²éÑ¯Ñ§Éú
+	 * é€šè¿‡åå­—æŸ¥è¯¢å­¦ç”Ÿ
 	 * @return
 	 */
 	public Student queryByName();

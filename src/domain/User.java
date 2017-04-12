@@ -1,7 +1,7 @@
 package domain;
 
 /**
- * ÓÃ»§bean
+ * ç”¨æˆ·bean
  * @author jda
  *
  */

@@ -7,52 +7,55 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+import dao.fakedao.UserFakeDao;
 import domain.User;
 
 public class UserDao {
 	
 	final String driver = "com.mysql.jdbc.Driver";
-	// URLÖ¸ÏòÒª·ÃÎÊµÄÊı¾İ¿âÃûscutcs
+	// URLæŒ‡å‘è¦è®¿é—®çš„æ•°æ®åº“åscutcs
 	final String url = "jdbc:mysql://127.0.0.1:3306/test";
-	// MySQLÅäÖÃÊ±µÄÓÃ»§Ãû
+	// MySQLé…ç½®æ—¶çš„ç”¨æˆ·å
 	final String username = "root";
-	// JavaÁ¬½ÓMySQLÅäÖÃÊ±µÄÃÜÂë
+	// Javaè¿æ¥MySQLé…ç½®æ—¶çš„å¯†ç 
 	final String password = "jda";
+	//æ•°æ®åº“æ˜¯å¦ä¸ºæ¨¡æ‹Ÿ
+	public static boolean isFake = true;
 
 	public static void main(String[] args) {
 		String driver = "com.mysql.jdbc.Driver";
-		// URLÖ¸ÏòÒª·ÃÎÊµÄÊı¾İ¿âÃûscutcs
+		// URLæŒ‡å‘è¦è®¿é—®çš„æ•°æ®åº“åscutcs
 		String url = "jdbc:mysql://127.0.0.1:3306/test";
-		// MySQLÅäÖÃÊ±µÄÓÃ»§Ãû
+		// MySQLé…ç½®æ—¶çš„ç”¨æˆ·å
 		String user = "root";
-		// JavaÁ¬½ÓMySQLÅäÖÃÊ±µÄÃÜÂë
+		// Javaè¿æ¥MySQLé…ç½®æ—¶çš„å¯†ç 
 		String password = "jda";
 		try {
-			// ¼ÓÔØÇı¶¯³ÌĞò
+			// åŠ è½½é©±åŠ¨ç¨‹åº
 			Class.forName(driver);
-			// Á¬ĞøÊı¾İ¿â
+			// è¿ç»­æ•°æ®åº“
 			Connection conn = DriverManager.getConnection(url, user, password);
 			if (!conn.isClosed()) {
 				System.out.println("Succeeded connecting to the Database!");
 			}
-			// statementÓÃÀ´Ö´ĞĞSQLÓï¾ä
+			// statementç”¨æ¥æ‰§è¡ŒSQLè¯­å¥
 			Statement statement = conn.createStatement();
-			// ÒªÖ´ĞĞµÄSQLÓï¾ä
+			// è¦æ‰§è¡Œçš„SQLè¯­å¥
 			String sql = "select * from user";
 			ResultSet rs = statement.executeQuery(sql);
 			System.out.println("-----------------");
-			System.out.println("Ö´ĞĞ½á¹ûÈçÏÂËùÊ¾:");
+			System.out.println("æ‰§è¡Œç»“æœå¦‚ä¸‹æ‰€ç¤º:");
 			System.out.println("-----------------");
-			System.out.println(" ÓÃ»§Ãû" + "\t" + " ÃÜÂë");
+			System.out.println(" ç”¨æˆ·å" + "\t" + " å¯†ç ");
 			System.out.println("-----------------");
 			String name = null;
 			while (rs.next()) {
-				// Ñ¡ÔñusernameÕâÁĞÊı¾İ
+				// é€‰æ‹©usernameè¿™åˆ—æ•°æ®
 				name = rs.getString("username");
-				// Ê×ÏÈÊ¹ÓÃISO-8859-1×Ö·û¼¯½«name½âÂëÎª×Ö½ÚĞòÁĞ²¢½«½á¹û´æ´¢ĞÂµÄ×Ö½ÚÊı×éÖĞ¡£
-				// È»ºóÊ¹ÓÃGB2312×Ö·û¼¯½âÂëÖ¸¶¨µÄ×Ö½ÚÊı×é
+				// é¦–å…ˆä½¿ç”¨ISO-8859-1å­—ç¬¦é›†å°†nameè§£ç ä¸ºå­—èŠ‚åºåˆ—å¹¶å°†ç»“æœå­˜å‚¨æ–°çš„å­—èŠ‚æ•°ç»„ä¸­ã€‚
+				// ç„¶åä½¿ç”¨GB2312å­—ç¬¦é›†è§£ç æŒ‡å®šçš„å­—èŠ‚æ•°ç»„
 				name = new String(name.getBytes("ISO-8859-1"), "GB2312");
-				// Êä³ö½á¹û
+				// è¾“å‡ºç»“æœ
 				System.out.println(name + "\t" + rs.getString("password"));
 			}
 			rs.close();
@@ -68,33 +71,33 @@ public class UserDao {
 	}
 	
 	/**
-	 * ²éÕÒÓÃ»§
+	 * æŸ¥æ‰¾ç”¨æˆ·
 	 * @param userName
-	 * @return  ´æÔÚ¸ÃÓÃ»§·µ»ØÓÃ»§bean ,Èô²»´æÔÚÔò·µ»Ønull
+	 * @return  å­˜åœ¨è¯¥ç”¨æˆ·è¿”å›ç”¨æˆ·bean ,è‹¥ä¸å­˜åœ¨åˆ™è¿”å›null
 	 */
 	public User getUser(String userName) {
 		User user = null;
 		try {
-			// ¼ÓÔØÇı¶¯³ÌĞò
+			// åŠ è½½é©±åŠ¨ç¨‹åº
 			Class.forName(driver);
-			// Á¬ĞøÊı¾İ¿â
+			// è¿ç»­æ•°æ®åº“
 			Connection conn = DriverManager.getConnection(url, username, password);
 			if (!conn.isClosed()) {
 				System.out.println("Succeeded connecting to the Database!");
 			}
-			// ÒªÖ´ĞĞµÄSQLÓï¾ä
+			// è¦æ‰§è¡Œçš„SQLè¯­å¥
 			String sql = "select * from user where username = ?";
 			PreparedStatement pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, userName);
 			ResultSet rs = pstmt.executeQuery();
 			String name = null;
 			while (rs.next()) {
-				// Ñ¡ÔñusernameÕâÁĞÊı¾İ
+				// é€‰æ‹©usernameè¿™åˆ—æ•°æ®
 				name = rs.getString("username");
-				// Ê×ÏÈÊ¹ÓÃISO-8859-1×Ö·û¼¯½«name½âÂëÎª×Ö½ÚĞòÁĞ²¢½«½á¹û´æ´¢ĞÂµÄ×Ö½ÚÊı×éÖĞ¡£
-				// È»ºóÊ¹ÓÃGB2312×Ö·û¼¯½âÂëÖ¸¶¨µÄ×Ö½ÚÊı×é
+				// é¦–å…ˆä½¿ç”¨ISO-8859-1å­—ç¬¦é›†å°†nameè§£ç ä¸ºå­—èŠ‚åºåˆ—å¹¶å°†ç»“æœå­˜å‚¨æ–°çš„å­—èŠ‚æ•°ç»„ä¸­ã€‚
+				// ç„¶åä½¿ç”¨GB2312å­—ç¬¦é›†è§£ç æŒ‡å®šçš„å­—èŠ‚æ•°ç»„
 				name = new String(name.getBytes("ISO-8859-1"), "GB2312");
-				// Êä³ö½á¹û
+				// è¾“å‡ºç»“æœ
 				System.out.println(name + "\t" + rs.getString("password"));
 				user = new User(name, rs.getString("password"));
 			}
@@ -109,5 +112,13 @@ public class UserDao {
 			e.printStackTrace();
 		}
 		return user;
+	}
+	
+	public User getUser_(String userName) {
+		if(isFake){
+			return UserFakeDao.getUser(userName);
+		}else {
+			return getUser(userName);
+		}
 	}
 }

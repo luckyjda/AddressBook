@@ -46,8 +46,8 @@
 			if(xmlhttp.readyState==4&&xmlhttp.status==200){//ajax返回
 				returndata=xmlhttp.responseText;
 				if("error" == returndata){
-					//alert('您输入的用户名或者密码错误！');
-					console.log('您输入的用户名或者密码错误！');
+					alert('您输入的用户名或者密码错误！');
+					//console.log('您输入的用户名或者密码错误！'); 日志打印到后台
 				}else{
 					window.location.href="/AddressBook/LoginForwordServlet?username=" + username + "&password="+password;
 				}
@@ -86,7 +86,7 @@
 				<input type="text" name="name" id="username" >
 				<br>
 				<br>
-				密&nbsp&nbsp码
+				密&nbsp&nbsp&nbsp码
 				<input type="password" name="password" id="password">
 				<br>
 				<br>

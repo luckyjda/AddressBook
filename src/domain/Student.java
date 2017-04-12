@@ -1,17 +1,17 @@
 package domain;
 
 public class Student {
-	//学号
+	//瀛﹀彿
 	private Integer id;
-	//姓名
+	//濮撳悕
 	private String name;
-	//性别
+	//鎬у埆
 	private String sex; 
-	//电话号码
+	//鐢佃瘽鍙风爜
 	private String phone;
-	//职务
+	//鑱屽姟
 	private String position;
-	//班级
+	//鐝骇
 	private String classNo;
 	
 	public Student() {

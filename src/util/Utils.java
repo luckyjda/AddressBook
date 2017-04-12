@@ -19,7 +19,7 @@ public class Utils {
     private static final Random RANDOM = new Random();
 
     /**
-     * ¼ì²éÓÃ»§Ãû
+     * æ£€æŸ¥ç”¨æˆ·å
      */
     public static boolean checkName(final String username) {
         String strPattern = "^[A-Za-z0-9_]{3,12}$";
@@ -29,7 +29,7 @@ public class Utils {
     }
 
     /**
-     * ÅĞ¶ÏÃÜÂë¸ñÊ½
+     * åˆ¤æ–­å¯†ç æ ¼å¼
      */
     public static boolean checkPassword(final String password) {
         String strPattern = "^[A-Za-z0-9_]{6,16}$";
@@ -39,26 +39,26 @@ public class Utils {
     }
 
     /**
-     * ½«µ±Ç°ÏµÍ³Ê±¼ä¸ñÊ½»¯ÎªÌØ¶¨µÄ¸ñÊ½£¬¸ñÊ½²Î¿¼ SimpleDateFormat ËùÊ¹ÓÃµÄ¸ñÊ½
+     * å°†å½“å‰ç³»ç»Ÿæ—¶é—´æ ¼å¼åŒ–ä¸ºç‰¹å®šçš„æ ¼å¼ï¼Œæ ¼å¼å‚è€ƒ SimpleDateFormat æ‰€ä½¿ç”¨çš„æ ¼å¼
      * 
      * @param formater
-     *            ÀıÈç£º"yyyy-MM-dd HH"
-     * @return ¸ù¾İ¸ø¶¨µÄ¸ñÊ½·µ»Øµ±Ç°ÏµÍ³Ê±¼äµÄ×Ö·û´® <br/>
-     *         ÀıÈç£ºÊäÈë¸ñÊ½Îª "yyyy-MM-dd HH:mm:ss" Ôò·µ»Ø×Ö·û´®Îª 2011-07-20 13
+     *            ä¾‹å¦‚ï¼š"yyyy-MM-dd HH"
+     * @return æ ¹æ®ç»™å®šçš„æ ¼å¼è¿”å›å½“å‰ç³»ç»Ÿæ—¶é—´çš„å­—ç¬¦ä¸² <br/>
+     *         ä¾‹å¦‚ï¼šè¾“å…¥æ ¼å¼ä¸º "yyyy-MM-dd HH:mm:ss" åˆ™è¿”å›å­—ç¬¦ä¸²ä¸º 2011-07-20 13
      */
     public static String formatTime(final String formater) {
         return formatTime(formater, new Date());
     }
 
     /**
-     * ½«Ê±¼ä¸ñÊ½»¯ÎªÌØ¶¨µÄ¸ñÊ½£¬¸ñÊ½²Î¿¼ SimpleDateFormat ËùÊ¹ÓÃµÄ¸ñÊ½
+     * å°†æ—¶é—´æ ¼å¼åŒ–ä¸ºç‰¹å®šçš„æ ¼å¼ï¼Œæ ¼å¼å‚è€ƒ SimpleDateFormat æ‰€ä½¿ç”¨çš„æ ¼å¼
      * 
      * @param formater
-     *            ÀıÈç£º"yyyy-MM-dd HH"
+     *            ä¾‹å¦‚ï¼š"yyyy-MM-dd HH"
      * @param time
-     *            Ê±¼äµÄlongĞÎÊ½
-     * @return ¸ù¾İ¸ø¶¨µÄ¸ñÊ½·µ»Øtime Ö¸¶¨Ê±¼äµÄ×Ö·û´® <br/>
-     *         ÀıÈç£ºÊäÈë¸ñÊ½Îª "yyyy-MM-dd HH" Ôò·µ»Ø×Ö·û´®Îª 2011-07-20 13
+     *            æ—¶é—´çš„longå½¢å¼
+     * @return æ ¹æ®ç»™å®šçš„æ ¼å¼è¿”å›time æŒ‡å®šæ—¶é—´çš„å­—ç¬¦ä¸² <br/>
+     *         ä¾‹å¦‚ï¼šè¾“å…¥æ ¼å¼ä¸º "yyyy-MM-dd HH" åˆ™è¿”å›å­—ç¬¦ä¸²ä¸º 2011-07-20 13
      */
     public static String formatTime(final String formater, final Long time) {
         return formatTime(formater, new Date(time));
@@ -68,10 +68,10 @@ public class Utils {
         return new SimpleDateFormat(formater).format(date);
     }
 
-    /**Èç 2014Äê4ÔÂ µÄÉÏÒ»¸öÔÂ2014Äê3ÔÂ
-     * »ñÈ¡ÉÏÒ»¸öÔÂ
-     * @param date ÈÕÆÚ
-     * @return ÈÕÆÚ
+    /**å¦‚ 2014å¹´4æœˆ çš„ä¸Šä¸€ä¸ªæœˆ2014å¹´3æœˆ
+     * è·å–ä¸Šä¸€ä¸ªæœˆ
+     * @param date æ—¥æœŸ
+     * @return æ—¥æœŸ
      */
     public static Date getLastMonth(Date date) {
         Calendar cal = Calendar.getInstance();
@@ -81,7 +81,7 @@ public class Utils {
     }
     
     /**
-     * »ñÈ¡ÏÂÒ»ÔÂ
+     * è·å–ä¸‹ä¸€æœˆ
      * @param date
      * @return
      */
@@ -93,9 +93,9 @@ public class Utils {
     }
     
     /**
-     * »ñÈ¡ÉÏÒ»¸öÄê
-     * @param date ÈÕÆÚ
-     * @return ÈÕÆÚ
+     * è·å–ä¸Šä¸€ä¸ªå¹´
+     * @param date æ—¥æœŸ
+     * @return æ—¥æœŸ
      */
     public static Date getLastYear(Date date) {
         Calendar cal = Calendar.getInstance();
@@ -105,7 +105,7 @@ public class Utils {
     }
     
     /**
-     * »ñÈ¡ÏÂÒ»ÔÂ
+     * è·å–ä¸‹ä¸€æœˆ
      * @param date
      * @return
      */
@@ -117,7 +117,7 @@ public class Utils {
     }
     
     /**
-     * ¸ñÊ½»¯Ê±¼ä\/Date(1391961600000+0800)\/
+     * æ ¼å¼åŒ–æ—¶é—´\/Date(1391961600000+0800)\/
      * 
      * @param time \/Date(1391961600000+0800)\/
      * @return
@@ -150,29 +150,29 @@ public class Utils {
 
 
     /**
-     * ÅĞ¶Ï×Ö·û´®ÊÇ·ñ²»Îª¿Õ
+     * åˆ¤æ–­å­—ç¬¦ä¸²æ˜¯å¦ä¸ä¸ºç©º
      * 
      * @param value
-     *            String ĞèÒªÅĞ¶ÏµÄ×Ö·û´®
-     * @return Èç¹ûÊäÈë×Ö·û´®Îª null ¡°null¡± ºÍ "" Ôò¾ù·µ»Ø false
+     *            String éœ€è¦åˆ¤æ–­çš„å­—ç¬¦ä¸²
+     * @return å¦‚æœè¾“å…¥å­—ç¬¦ä¸²ä¸º null â€œnullâ€ å’Œ "" åˆ™å‡è¿”å› false
      */
     public static boolean isNotNull(final String value) {
         return (value != null && !"".equalsIgnoreCase(value));
     }
 
     /**
-     * ÅĞ¶Ï×Ö·û´®ÊÇ·ñÎª¿Õ
+     * åˆ¤æ–­å­—ç¬¦ä¸²æ˜¯å¦ä¸ºç©º
      * 
      * @param str
-     *            String ĞèÒªÅĞ¶ÏµÄ×Ö·û´®
-     * @return Èç¹ûÊäÈë×Ö·û´®Îª null ¡°null¡± ºÍ "" Ôò¾ù·µ»Ø true
+     *            String éœ€è¦åˆ¤æ–­çš„å­—ç¬¦ä¸²
+     * @return å¦‚æœè¾“å…¥å­—ç¬¦ä¸²ä¸º null â€œnullâ€ å’Œ "" åˆ™å‡è¿”å› true
      */
     public static boolean isNull(final String value) {
         return !isNotNull(value);
     }
 
     /**
-     * ÅĞ¶Ïbyte Êı×é ÊÇ·ñÎª²»Îª¿Õ
+     * åˆ¤æ–­byte æ•°ç»„ æ˜¯å¦ä¸ºä¸ä¸ºç©º
      * 
      * @param value
      * @return
@@ -182,7 +182,7 @@ public class Utils {
     }
 
     /**
-     * ÅĞ¶ÏÊıÖµ ÊÇ·ñÎª²»Îª¿ÕºÍ0
+     * åˆ¤æ–­æ•°å€¼ æ˜¯å¦ä¸ºä¸ä¸ºç©ºå’Œ0
      * 
      * @param value
      * @return
@@ -192,7 +192,7 @@ public class Utils {
     }
 
     /**
-     * ÅĞ¶ÏÊıÖµ ÊÇ·ñÎªÎª¿Õ
+     * åˆ¤æ–­æ•°å€¼ æ˜¯å¦ä¸ºä¸ºç©º
      * 
      * @param value
      * @return
@@ -202,7 +202,7 @@ public class Utils {
     }
 
     /**
-     * ÅĞ¶Ïbyte Êı×é ÊÇ·ñÎªÎª¿Õ
+     * åˆ¤æ–­byte æ•°ç»„ æ˜¯å¦ä¸ºä¸ºç©º
      * 
      * @param value
      */
@@ -212,7 +212,7 @@ public class Utils {
 
 
     /**
-     * ÅĞ¶ÏÁ½¸ö×Ö·û´® equal µÄ½á¹û</br>Á½¸ö×Ö·û´® ¿ÉÒÔÎª¿Õ
+     * åˆ¤æ–­ä¸¤ä¸ªå­—ç¬¦ä¸² equal çš„ç»“æœ</br>ä¸¤ä¸ªå­—ç¬¦ä¸² å¯ä»¥ä¸ºç©º
      * 
      * @param first
      * @param second
@@ -229,7 +229,7 @@ public class Utils {
     }
 
     /**
-     * @author ltg ÅĞ¶Ï×Ö·û´®ÊÇ·ñÓÉ´¿Êı×Ö×é³É</br>´ı¸üĞÂ
+     * @author ltg åˆ¤æ–­å­—ç¬¦ä¸²æ˜¯å¦ç”±çº¯æ•°å­—ç»„æˆ</br>å¾…æ›´æ–°
      * @param str
      * @return
      */
@@ -258,7 +258,7 @@ public class Utils {
     }
 
     /**
-     * Éú³ÉËæ»úÕûÊı
+     * ç”Ÿæˆéšæœºæ•´æ•°
      * 
      * @return
      */
@@ -267,7 +267,7 @@ public class Utils {
     }
 
     /**
-     * »ñÈ¡ÎÄ¼ş´óĞ¡×Ö½ÚÊı
+     * è·å–æ–‡ä»¶å¤§å°å­—èŠ‚æ•°
      * 
      * @param filePath
      * @return
@@ -293,7 +293,7 @@ public class Utils {
     }
 
     /**
-     * des ÊÇ·ñºÍµ±ÌìÊÇÍ¬Ò»Ìì
+     * des æ˜¯å¦å’Œå½“å¤©æ˜¯åŒä¸€å¤©
      * 
      * @param des
      * @return
@@ -303,7 +303,7 @@ public class Utils {
     }
 
     /**
-     * oneºÍtwoÊÇ·ñÊÇÍ¬Ò»Ìì
+     * oneå’Œtwoæ˜¯å¦æ˜¯åŒä¸€å¤©
      * 
      * @param one
      * @param two
@@ -325,7 +325,7 @@ public class Utils {
     }
 
     /**
-     * ÊÊÅä¶àÖÖÎÄ¼ş¸ñÊ½
+     * é€‚é…å¤šç§æ–‡ä»¶æ ¼å¼
      * 
      * @param f
      * @return
@@ -349,10 +349,10 @@ public class Utils {
 
 
     /**
-     * ÅĞ¶ÏÊÇ·ñÎªNULL»òÊÇ¿Õ×Ö·û´®
+     * åˆ¤æ–­æ˜¯å¦ä¸ºNULLæˆ–æ˜¯ç©ºå­—ç¬¦ä¸²
      * 
      * @param str
-     * @return¡¡ÎªNULL»òÊÇ¿Õ×Ö·û´®Ê±·µ»Øtrue£¬·ñÔò·µ»Øfalse
+     * @returnã€€ä¸ºNULLæˆ–æ˜¯ç©ºå­—ç¬¦ä¸²æ—¶è¿”å›trueï¼Œå¦åˆ™è¿”å›false
      */
     public static Boolean StrIsNullEmpty(final String str) {
         if (str == null || str.equals("")) {
@@ -362,7 +362,7 @@ public class Utils {
     }
 
     /**
-     * »ñÈ¡ÎÄ¼şÃû³Æ
+     * è·å–æ–‡ä»¶åç§°
      */
     public static String GetFileName(final String fileurl) {
         if (fileurl == null || fileurl.equals("")) {
@@ -379,7 +379,7 @@ public class Utils {
     }
 
     /**
-     * ÅĞ¶ÏÎÄ¼şÊÇ·ñ´æÔÚ
+     * åˆ¤æ–­æ–‡ä»¶æ˜¯å¦å­˜åœ¨
      * 
      * @param path
      * @return
@@ -400,10 +400,10 @@ public class Utils {
     }
 
     /**
-     * ÅĞ¶ÏÎÄ¼şµÄÎÄ¼ş¼ĞÊÇ·ñ´æÔÚ
+     * åˆ¤æ–­æ–‡ä»¶çš„æ–‡ä»¶å¤¹æ˜¯å¦å­˜åœ¨
      * 
      * @param strfilename
-     *            ÎÄ¼şµÄÍêÕûÎÄ¼şÃû
+     *            æ–‡ä»¶çš„å®Œæ•´æ–‡ä»¶å
      * @return
      */
     public static boolean isExistFolderFromFile(final String strfilename) {
@@ -419,7 +419,7 @@ public class Utils {
     }
 
     /**
-     * ÅĞ¶ÏÊÇ·ñ´æÔÚÎÄ¼ş¼Ğ,²»´æÔÚÔò»á³¥ÊÔ½øĞĞ´´½¨
+     * åˆ¤æ–­æ˜¯å¦å­˜åœ¨æ–‡ä»¶å¤¹,ä¸å­˜åœ¨åˆ™ä¼šå¿è¯•è¿›è¡Œåˆ›å»º
      */
     public static boolean isExistFolder(final String strFolder) {
         if (strFolder == null) {
@@ -429,7 +429,7 @@ public class Utils {
 
         File f = new File(strFolder);
         if (!f.exists()) {
-            /* ´´½¨ÎÄ¼ş¼Ğ */
+            /* åˆ›å»ºæ–‡ä»¶å¤¹ */
             if (f.mkdirs()) {
                 bReturn = true;
             } else {
@@ -443,13 +443,13 @@ public class Utils {
 
 
     /**
-     * ¼ÆËãÎÄ¼şµÄ´óĞ¡
+     * è®¡ç®—æ–‡ä»¶çš„å¤§å°
      * 
      * @param f
      * @return
      * @throws Exception
      */
-    // µİ¹é
+    // é€’å½’
     public static long getFileSize(final File f) throws Exception {
         if (!f.exists()) {
             return 0;
@@ -467,7 +467,7 @@ public class Utils {
     }
 
 
-    // Ğ´Êı¾İµ½SDÖĞµÄÎÄ¼ş
+    // å†™æ•°æ®åˆ°SDä¸­çš„æ–‡ä»¶
     public static void writeToSdcard(final String fileName, final String write_str) {
         try {
 
@@ -483,7 +483,7 @@ public class Utils {
         }
     }
 
-    // É¾³ıÎÄ¼ş
+    // åˆ é™¤æ–‡ä»¶
     public static boolean deleteFile(final String fileName) {
         try {
             File f = new File(fileName);
@@ -495,7 +495,7 @@ public class Utils {
     }
 
     /**
-     * ÑéÖ¤ÊÖ»úºÅÂë
+     * éªŒè¯æ‰‹æœºå·ç 
      * 
      * @param mobiles
      * @return
@@ -508,17 +508,17 @@ public class Utils {
 
     
     /** 
-     * µç»°ºÅÂëÑéÖ¤ 
+     * ç”µè¯å·ç éªŒè¯ 
      *  
      * @param  str 
-     * @return ÑéÖ¤Í¨¹ı·µ»Øtrue 
+     * @return éªŒè¯é€šè¿‡è¿”å›true 
      */  
     public static boolean isPhone(String str) {   
         Pattern p1 = null,p2 = null;  
         Matcher m = null;  
         boolean b = false;    
-        p1 = Pattern.compile("^[0][1-9]{2,3}-[0-9]{5,10}$");  // ÑéÖ¤´øÇøºÅµÄ  
-        p2 = Pattern.compile("^[1-9]{1}[0-9]{5,8}$");         // ÑéÖ¤Ã»ÓĞÇøºÅµÄ  
+        p1 = Pattern.compile("^[0][1-9]{2,3}-[0-9]{5,10}$");  // éªŒè¯å¸¦åŒºå·çš„  
+        p2 = Pattern.compile("^[1-9]{1}[0-9]{5,8}$");         // éªŒè¯æ²¡æœ‰åŒºå·çš„  
         if(str.length() >9)  
         {   m = p1.matcher(str);  
             b = m.matches();    
@@ -530,7 +530,7 @@ public class Utils {
     }  
     
     /**
-     * ÍøÌü¹Ì»°ÑéÖ¤±ê×¼
+     * ç½‘å…å›ºè¯éªŒè¯æ ‡å‡†
      * @param mobiles
      * @return
      */
@@ -541,9 +541,9 @@ public class Utils {
     }
     
     /**
-	 * ÑéÖ¤ÓÊÏäµØÖ·ÊÇ·ñÕıÈ·
+	 * éªŒè¯é‚®ç®±åœ°å€æ˜¯å¦æ­£ç¡®
 	 * @param email
-	 * @return ÑéÖ¤Í¨¹ı·µ»Øtrue 
+	 * @return éªŒè¯é€šè¿‡è¿”å›true 
 	 */
 	public static boolean isEmail(String email) {
 		boolean isEmail = false;
@@ -556,7 +556,7 @@ public class Utils {
     
     
     /**
-     * »ñÈ¡spinnerÏÂ±êÎ»ÖÃ
+     * è·å–spinnerä¸‹æ ‡ä½ç½®
      * @param typeList
      * @param name
      * @return
@@ -578,7 +578,7 @@ public class Utils {
 	 }
 	 
 	 /**
-     * »ñÈ¡µ±Ç°Ê±¼ä
+     * è·å–å½“å‰æ—¶é—´
      * @return
      */
     public static String getCurrentDate(){
@@ -589,7 +589,7 @@ public class Utils {
     	return transDate;
     }
     /**
-     * »ñÈ¡µ±Ç°Ê±¼ä
+     * è·å–å½“å‰æ—¶é—´
      * @return
      */
     public static String getVideoDate(){
@@ -601,7 +601,7 @@ public class Utils {
     }
     
     /**
-     * »ñÈ¡µ±Ç°Ê±¼ä
+     * è·å–å½“å‰æ—¶é—´
      * @return
      */
     public static String getBillCurrentDate(){
@@ -613,7 +613,7 @@ public class Utils {
     }
     
     /**
-     * »ñÈ¡µ±Ç°Ê±¼ä
+     * è·å–å½“å‰æ—¶é—´
      * @return
      */
     public static String getBillLast6MonthDate(){
@@ -625,10 +625,10 @@ public class Utils {
     
 	/**
      * 2014/3/4 08:06
-	 * ±È½ÏÊ±¼ä´óĞ¡
+	 * æ¯”è¾ƒæ—¶é—´å¤§å°
 	 * @param firstDate
 	 * @param secondDate
-	 * @return firstDate > secondDate ·µ»Øtrue , ·ñÔòfalse
+	 * @return firstDate > secondDate è¿”å›true , å¦åˆ™false
 	 */
 	public static boolean CompareDate(String firstTime, String secondTime) throws ParseException {
 		boolean isAfter = false;
@@ -642,7 +642,7 @@ public class Utils {
 	
 	
 	/**
-	 * ¸ñÊ½»¯Ğ¡Êıµã
+	 * æ ¼å¼åŒ–å°æ•°ç‚¹
 	 * @param num
 	 * @return
 	 */
@@ -652,7 +652,7 @@ public class Utils {
 	}
 	
 	 /**
-	* @description ·µ»Ø×Ö·û´®ÀïÖĞÎÄ×Ö»òÕßÈ«½Ç×Ö·ûµÄ¸öÊı
+	* @description è¿”å›å­—ç¬¦ä¸²é‡Œä¸­æ–‡å­—æˆ–è€…å…¨è§’å­—ç¬¦çš„ä¸ªæ•°
 	* @param s
 	* @return
 	*/

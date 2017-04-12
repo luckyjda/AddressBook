@@ -9,7 +9,7 @@ import org.json.JSONObject;
 public class ResponseUtils {
 	
 	/**
-	 * 后台返回JSON数据
+	 * 鍚庡彴杩斿洖JSON鏁版嵁
 	 * @param response
 	 * @param map
 	 */
