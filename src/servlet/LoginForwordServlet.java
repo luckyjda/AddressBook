@@ -1,7 +1,6 @@
 package servlet;
 
 import java.io.IOException;
-
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -11,8 +10,7 @@ public class LoginForwordServlet extends HttpServlet {
 
 	private static final long serialVersionUID = -1912222886837122490L;
 
-	public void doGet(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
+	public void doGet(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException {
 		String userName = request.getParameter("username");
 		System.out.println("name:" + userName);
 		request.getRequestDispatcher("/main.jsp").forward(request, response);
