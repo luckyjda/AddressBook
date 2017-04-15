@@ -9,7 +9,8 @@
 	<head>
 		<base href="<%=basePath%>">
 
-		<title>My JSP 'MyJsp.jsp' starting page</title>
+		<title>主页</title>
+		<link rel='icon' href='images/left/home.ico' type=‘image/x-ico’ /> 
 
 		<meta http-equiv="pragma" content="no-cache">
 		<meta http-equiv="cache-control" content="no-cache">
@@ -137,7 +138,27 @@
 			.leftsidebar_box dl dd:last-child {
 				padding-bottom: 10px;
 			}
+			
+			#right_content{
+				width:100%;
+				margin-left:160px;
+				height: auto !important;
+				overflow: visible !important;
+				position: fixed;
+				height: 100% !important;
+			}
 		</style>
+		
+		<script type="text/javascript">
+			var menuClick = function(menuUrl) {
+					debugger;
+					$('#iframe').attr("src","http://www.dangdang.com");  
+					document.getElementById("iframe").src="http://www.doulaicha.com"; 
+					document.getElementById("iframe").location.reload();
+		        };
+
+		</script>
+		
 	</head>
 
 	<body>
@@ -153,11 +174,11 @@
 		</dl>
 	
 		<dl class="custom">
-			<dt onClick="changeImage()">联系人管理<img src="images/left/select_xl01.png"></dt>
-			<dd class="first_dd"><a href="#">联系人列表</a></dd>
-			<dd><a href="#">添加联系人</a></dd>
-			<dd><a href="#">修改联系人</a></dd>
-			<dd><a href="#">删除联系人</a></dd>
+			<dt onClick="changeImage()">学生管理<img src="images/left/select_xl01.png"></dt>
+			<dd class="first_dd"><a href="###" onclick="menuClick('${pageContext.request.contextPath}/login.jsp')" >学生列表</a></dd>
+			<dd><a href="#">添加学生</a></dd>
+			<dd><a href="#">修改学生</a></dd>
+			<dd><a href="#">删除学生</a></dd>
 		</dl>
 	
 		<dl class="channel">
@@ -205,26 +226,27 @@
 		</dl>
 	
 	</div>
-
+	<div class = "right_content">
+		<iframe id="iframe" name = "frame" src="${pageContext.request.contextPath}/addStudent.jsp" width="100%" height="800px"  frameborder="no" border="0" marginwidth="160" marginheight="0" scrolling="no" allowtransparency="yes"></iframe>
 	</div>
-	
+	</div>
 	<script type="text/javascript" src="js/jquery.js"></script>
 	<script type="text/javascript">
-	$(".leftsidebar_box dt").css({"background-color":"#3992d0"});
-	$(".leftsidebar_box dt img").attr("src","images/left/select_xl01.png");
-	$(function(){
-		$(".leftsidebar_box dd").hide();
-		$(".leftsidebar_box dt").click(function(){
-			$(".leftsidebar_box dt").css({"background-color":"#3992d0"})
-			$(this).css({"background-color": "#317eb4"});
-			$(this).parent().find('dd').removeClass("menu_chioce");
+			$(".leftsidebar_box dt").css({"background-color":"#3992d0"});
 			$(".leftsidebar_box dt img").attr("src","images/left/select_xl01.png");
-			$(this).parent().find('img').attr("src","images/left/select_xl.png");
-			$(".menu_chioce").slideUp(); 
-			$(this).parent().find('dd').slideToggle();
-			$(this).parent().find('dd').addClass("menu_chioce");
-		});
-	})
+			$(function(){
+				$(".leftsidebar_box dd").hide();
+				$(".leftsidebar_box dt").click(function(){
+					$(".leftsidebar_box dt").css({"background-color":"#3992d0"})
+					$(this).css({"background-color": "#317eb4"});
+					$(this).parent().find('dd').removeClass("menu_chioce");
+					$(".leftsidebar_box dt img").attr("src","images/left/select_xl01.png");
+					$(this).parent().find('img').attr("src","images/left/select_xl.png");
+					$(".menu_chioce").slideUp(); 
+					$(this).parent().find('dd').slideToggle();
+					$(this).parent().find('dd').addClass("menu_chioce");
+				});
+			})
 	</script>
 	<script src="http://www.w2bc.com/scripts/2bc/_gg_980_90.js" type="text/javascript"></script>
 	</body>

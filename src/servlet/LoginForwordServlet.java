@@ -12,7 +12,6 @@ public class LoginForwordServlet extends HttpServlet {
 
 	public void doGet(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException {
 		String userName = request.getParameter("username");
-		System.out.println("name:" + userName);
 		request.getRequestDispatcher("/main.jsp").forward(request, response);
 	}
 
